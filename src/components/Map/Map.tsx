@@ -82,6 +82,7 @@ export const Map = ({
             vehicle={vehicle}
             active={vehicle.id === selectedVehicleId}
             onClick={() => setSelectedVehicleId(vehicle.id)}
+            onPopupClose={() => setSelectedVehicleId("")}
           />
         );
       })}

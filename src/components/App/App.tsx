@@ -59,7 +59,7 @@ export const App = () => {
   }, [vehicles, filters]);
 
   return (
-    <div className={styles["map-container"]}>
+    <div className={styles.container}>
       {state === "loading" && <Loader />}
       {state === "error" && ErrorMessages.VEHICLES_FETCH_ERROR}
       {vehicles.length !== 0 && (

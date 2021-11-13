@@ -11,6 +11,7 @@ type VegicleMarkerProps = {
   vehicle: Vehicle;
   size?: number;
   onClick?: () => void | Promise<void>;
+  onPopupClose: () => void | Promise<void>;
   active: boolean;
 } & ChildComponentProps;
 
@@ -18,6 +19,7 @@ export const VehicleMarker = ({
   vehicle,
   size = 20,
   onClick,
+  onPopupClose,
   active,
 }: VegicleMarkerProps) => {
   const classNames = clsx(
@@ -38,7 +40,9 @@ export const VehicleMarker = ({
         }}
         onClick={onClick}
       />
-      {active && <VehicleDetailsPopup vehicle={vehicle} />}
+      {active && (
+        <VehicleDetailsPopup vehicle={vehicle} onClose={onPopupClose} />
+      )}
     </div>
   );
 };
