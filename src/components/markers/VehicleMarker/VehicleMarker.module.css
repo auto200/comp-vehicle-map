@@ -1,6 +1,10 @@
 .marker {
   border: 1px solid var(--clr-primary);
   border-radius: 50%;
+  cursor: pointer;
+}
+.marker:hover:not(.active) {
+  border: 2px dotted var(--clr-secondary);
 }
 
 .available {
@@ -9,4 +13,8 @@
 
 .unavailable {
   background-color: var(--clr-vehicle-unavailable);
+}
+
+.active {
+  border: 3px solid var(--clr-secondary);
 }

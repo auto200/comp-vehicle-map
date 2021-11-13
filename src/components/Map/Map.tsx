@@ -9,9 +9,15 @@ import { convertVehicleToPoint } from "./utils";
 
 type MapProps = {
   vehicles: Vehicle[];
+  selectedVehicleId: string;
+  setSelectedVehicleId: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const Map = ({ vehicles }: MapProps) => {
+export const Map = ({
+  vehicles,
+  selectedVehicleId,
+  setSelectedVehicleId,
+}: MapProps) => {
   const [zoom, setZoom] = useState(DEFAULT_MAP_ZOOM);
   const [bounds, setBounds] = useState<BBox | undefined>();
 
@@ -74,6 +80,8 @@ export const Map = ({ vehicles }: MapProps) => {
             lat={vehicle.location.latitude}
             lng={vehicle.location.longitude}
             vehicle={vehicle}
+            active={vehicle.id === selectedVehicleId}
+            onClick={() => setSelectedVehicleId(vehicle.id)}
           />
         );
       })}

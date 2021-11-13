@@ -9,13 +9,24 @@ import styles from "./VehicleMarker.module.css";
 type VegicleMarkerProps = {
   vehicle: Vehicle;
   size?: number;
+  onClick?: () => void | Promise<void>;
+  active: boolean;
 } & ChildComponentProps;
 
-export const VehicleMarker = ({ vehicle, size = 20 }: VegicleMarkerProps) => {
-  const classNames = clsx(styles.marker, {
-    //add styles according to vehicle status
-    [styles.available]: vehicle.status === VehicleStatus.AVAILABLE,
-  });
+export const VehicleMarker = ({
+  vehicle,
+  size = 20,
+  onClick,
+  active,
+}: VegicleMarkerProps) => {
+  const classNames = clsx(
+    styles.marker,
+    {
+      //add styles according to vehicle status
+      [styles.available]: vehicle.status === VehicleStatus.AVAILABLE,
+    },
+    active && styles.active
+  );
 
   return (
     <button
@@ -23,6 +34,7 @@ export const VehicleMarker = ({ vehicle, size = 20 }: VegicleMarkerProps) => {
       style={{
         ...getCenterMarkerStyles(size),
       }}
+      onClick={onClick}
     ></button>
   );
 };
