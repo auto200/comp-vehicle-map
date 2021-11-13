@@ -1,0 +1,1 @@
+export { getVehicles } from "./getVehicles";
