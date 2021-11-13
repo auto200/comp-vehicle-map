@@ -7,7 +7,6 @@ type VehiclesResponse = {
 
 export const getVehicles = async () => {
   const vehiclesResponse = await fetcher("/map?objectType=VEHICLE");
-  console.log("got respone");
   const vehicles = (await vehiclesResponse.json()) as VehiclesResponse;
   return vehicles.objects;
 };

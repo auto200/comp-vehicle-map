@@ -1,0 +1,1 @@
+export { getMarkerBaseStyles } from "./getMarkerBaseStyles";

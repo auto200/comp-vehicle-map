@@ -1,8 +1,8 @@
-import { VehicleMarker } from "components/markers/VehicleMarker/VehicleMarker";
-import GoogleMapReact from "google-map-react";
+import { Loader } from "components/Loader";
+import { Map } from "components/Map";
 import React, { useEffect, useState } from "react";
 import { getVehicles } from "services/api";
-import { DEFAULT_CENTER, DEFAULT_ZOOM } from "utils/constants";
+import { ErrorMessages } from "utils/enums/errorMessages";
 import { Vehicle } from "utils/models/vehicle.model";
 import styles from "./App.module.css";
 
@@ -29,20 +29,9 @@ const App = () => {
 
   return (
     <div className={styles["map-container"]}>
-      <GoogleMapReact
-        // bootstrapURLKeys={{ key: process.env.REACT_APP_MAP_API_KEY as string }}
-        defaultCenter={DEFAULT_CENTER}
-        defaultZoom={DEFAULT_ZOOM}
-      >
-        {vehicles.map((vehicle) => (
-          <VehicleMarker
-            key={vehicle.id}
-            lat={vehicle.location.latitude}
-            lng={vehicle.location.longitude}
-            vehicle={vehicle}
-          />
-        ))}
-      </GoogleMapReact>
+      {state === "loading" && <Loader />}
+      {state === "error" && ErrorMessages.VEHICLES_FETCH_ERROR}
+      {vehicles.length !== 0 && <Map vehicles={vehicles} />}
     </div>
   );
 };
