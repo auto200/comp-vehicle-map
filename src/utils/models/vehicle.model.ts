@@ -1,3 +1,5 @@
+import { VehicleStatus } from "utils/enums/VehicleStatus";
+
 export type Vehicle = {
   discriminator: string;
   platesNumber: string;
@@ -14,7 +16,7 @@ export type Vehicle = {
   batteryLevelPct: number;
   reservationEnd: null;
   reservation: null;
-  status: string;
+  status: VehicleStatus;
   locationDescription: null;
   address: null;
   mapColor: {

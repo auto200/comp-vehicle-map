@@ -10,4 +10,5 @@ body {
   --clr-secondary: white;
   --clr-vehicle-available: green;
   --clr-vehicle-unavailable: red;
+  --clr-settings-bg: lightgray;
 }

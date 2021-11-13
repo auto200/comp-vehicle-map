@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { ChildComponentProps } from "google-map-react";
 import React from "react";
+import { VehicleStatus } from "utils/enums/VehicleStatus";
 import { Vehicle } from "utils/models/vehicle.model";
 import { getCenterMarkerStyles } from "../shared";
 import styles from "./VehicleMarker.module.css";
@@ -12,7 +13,8 @@ type VegicleMarkerProps = {
 
 export const VehicleMarker = ({ vehicle, size = 20 }: VegicleMarkerProps) => {
   const classNames = clsx(styles.marker, {
-    [styles.available]: vehicle.status === "AVAILABLE",
+    //add styles according to vehicle status
+    [styles.available]: vehicle.status === VehicleStatus.AVAILABLE,
   });
 
   return (

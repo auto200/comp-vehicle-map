@@ -1,0 +1,33 @@
+.container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 200px;
+  background-color: var(--clr-settings-bg);
+  padding: 5px;
+}
+
+.container > *:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.range-input {
+  width: 45px;
+  margin-right: 3px;
+}
