@@ -6,6 +6,7 @@
   height: 200px;
   background-color: var(--clr-bg);
   padding: 5px;
+  border-top-right-radius: 5px;
 }
 
 .container > *:not(:last-child) {

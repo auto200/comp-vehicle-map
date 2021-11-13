@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { VehicleDetailsPopup } from "components/VehicleDetailsPopup";
 import { ChildComponentProps } from "google-map-react";
 import React from "react";
 import { VehicleStatus } from "utils/enums/VehicleStatus";
@@ -29,12 +30,15 @@ export const VehicleMarker = ({
   );
 
   return (
-    <button
-      className={classNames}
-      style={{
-        ...getCenterMarkerStyles(size),
-      }}
-      onClick={onClick}
-    ></button>
+    <div style={{ position: "relative" }}>
+      <button
+        className={classNames}
+        style={{
+          ...getCenterMarkerStyles(size),
+        }}
+        onClick={onClick}
+      />
+      {active && <VehicleDetailsPopup vehicle={vehicle} />}
+    </div>
   );
 };

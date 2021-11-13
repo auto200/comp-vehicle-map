@@ -1,0 +1,17 @@
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -106%);
+  width: 250px;
+  height: 200px;
+  padding: 5px;
+  z-index: var(--zIndex-over);
+  background-color: var(--clr-bg);
+  text-align: center;
+  font-size: 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}

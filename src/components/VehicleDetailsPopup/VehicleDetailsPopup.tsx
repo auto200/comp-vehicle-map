@@ -1,11 +1,11 @@
 import { Vehicle } from "utils/models/vehicle.model";
-import styles from "./VehicleDetails.module.css";
+import styles from "./VehicleDetailsPopup.module.css";
 
-type VehicleDetailsProps = {
+type VehicleDetailsPopupProps = {
   vehicle: Vehicle;
 };
 
-export const VehicleDetails = ({ vehicle }: VehicleDetailsProps) => {
+export const VehicleDetailsPopup = ({ vehicle }: VehicleDetailsPopupProps) => {
   return (
     <div className={styles.wrapper}>
       <p>Name: {vehicle.name}</p>

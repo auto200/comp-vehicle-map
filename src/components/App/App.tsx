@@ -1,7 +1,6 @@
 import { Filters } from "components/Filters";
 import { Loader } from "components/Loader";
 import { Map } from "components/Map";
-import { VehicleDetails } from "components/VehicleDetails";
 import React, { useEffect, useState } from "react";
 import { getVehicles } from "services/api";
 import { ErrorMessages } from "utils/enums/errorMessages";
@@ -21,10 +20,6 @@ export const App = () => {
     vehicleMinKmRange: null,
   });
   const [selectedVehicleId, setSelectedVehicleId] = useState("");
-
-  const selectedVehicle = filtredVehicles.find(
-    ({ id }) => selectedVehicleId === id
-  );
 
   useEffect(() => {
     const init = async () => {
@@ -75,7 +70,6 @@ export const App = () => {
             setSelectedVehicleId={setSelectedVehicleId}
           />
           <Filters filters={filters} setFilters={setFilters} />
-          {selectedVehicle && <VehicleDetails vehicle={selectedVehicle} />}
         </>
       )}
     </div>
