@@ -10,5 +10,5 @@
   align-items: center;
   justify-content: center;
   font-size: 32px;
-  color: white;
+  color: var(--clr-secondary);
 }

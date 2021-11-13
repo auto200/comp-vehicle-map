@@ -8,7 +8,7 @@ import styles from "./App.module.css";
 
 type State = "idle" | "loading" | "error";
 
-const App = () => {
+export const App = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
   const [state, setState] = useState<State>("idle");
 
@@ -35,5 +35,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

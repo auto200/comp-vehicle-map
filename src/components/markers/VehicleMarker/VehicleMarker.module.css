@@ -1,0 +1,12 @@
+.marker {
+  border: 1px solid var(--clr-primary);
+  border-radius: 50%;
+}
+
+.available {
+  background-color: var(--clr-vehicle-available);
+}
+
+.unavailable {
+  background-color: var(--clr-vehicle-unavailable);
+}

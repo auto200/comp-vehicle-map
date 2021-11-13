@@ -1,1 +1,1 @@
-export { getMarkerBaseStyles } from "./getMarkerBaseStyles";
+export { getCenterMarkerStyles } from "./getCenterMarkerStyles";

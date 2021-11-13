@@ -1,6 +1,7 @@
 import { ChildComponentProps } from "google-map-react";
 import React from "react";
-import { getMarkerBaseStyles } from "../shared";
+import { getCenterMarkerStyles } from "../shared";
+import styles from "./ClusterMarker.module.css";
 
 type ClusterMarkerProps = {
   pointCount: number;
@@ -11,18 +12,11 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
   pointCount,
   size,
 }) => {
-  console.log(size);
   return (
     <div
+      className={styles.marker}
       style={{
-        ...getMarkerBaseStyles(size),
-        border: "6px solid yellow",
-        borderRadius: "50%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "white",
-        fontSize: 18,
+        ...getCenterMarkerStyles(size),
       }}
     >
       {pointCount}

@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "./Loader.module.css";
 
-export const Loader: React.FC = () => {
-  return <div className={styles.loader}>Loading...</div>;
+type LoaderProps = {
+  text?: string;
+};
+
+export const Loader: React.FC<LoaderProps> = ({ text }) => {
+  return <div className={styles.loader}>{text || "Loading..."}</div>;
 };

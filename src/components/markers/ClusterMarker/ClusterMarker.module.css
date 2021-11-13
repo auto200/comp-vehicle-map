@@ -1,0 +1,9 @@
+.marker {
+  border: 6px solid yellow;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18;
+}
