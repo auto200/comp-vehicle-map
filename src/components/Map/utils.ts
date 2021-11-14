@@ -1,9 +1,9 @@
 import { GeoJsonProperties } from "geojson";
 import { PointFeature } from "supercluster";
-import { Vehicle } from "utils/models/vehicle.model";
+import { VehicleModel } from "utils/models/vehicle.model";
 
 export const convertVehicleToPoint = (
-  vehicle: Vehicle
+  vehicle: VehicleModel
 ): PointFeature<GeoJsonProperties> => ({
   type: "Feature",
   properties: {

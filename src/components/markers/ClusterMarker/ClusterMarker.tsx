@@ -19,7 +19,7 @@ export const ClusterMarker: React.FC<ClusterMarkerProps> = ({
         ...getCenterMarkerStyles(size),
       }}
     >
-      {pointCount}
+      <span data-testid="cluster-marker-point-count">{pointCount}</span>
     </div>
   );
 };

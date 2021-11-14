@@ -3,12 +3,16 @@ import { BBox } from "geojson";
 import GoogleMapReact from "google-map-react";
 import React, { useRef, useState } from "react";
 import useSupercluster from "use-supercluster";
-import { Vehicle } from "utils/models/vehicle.model";
-import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM } from "./constants";
+import { VehicleModel } from "utils/models/vehicle.model";
+import {
+  CLAUSTER_MARKER_SIZE,
+  DEFAULT_MAP_CENTER,
+  DEFAULT_MAP_ZOOM,
+} from "./constants";
 import { convertVehicleToPoint } from "./utils";
 
 type MapProps = {
-  vehicles: Vehicle[];
+  vehicles: VehicleModel[];
   selectedVehicleId: string;
   setSelectedVehicleId: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -25,23 +29,11 @@ export const Map = ({
 
   const points = vehicles.map((vehicle) => convertVehicleToPoint(vehicle));
 
-  const getClausterMakerSize = (pointCount: number) => {
-    const BASE = 10;
-    const PERCENT_OF_ALL = pointCount / points.length;
-    const MULTIPLIER = 100;
-    const MAX_SIZE = 25;
-
-    const size = BASE + PERCENT_OF_ALL * MULTIPLIER;
-    return Math.min(size, MAX_SIZE);
-  };
-
   const { clusters } = useSupercluster({
     points,
     bounds,
     zoom,
-    options: { radius: 75, maxZoom: 20 },
   });
-  console.log(clusters);
 
   return (
     <GoogleMapReact
@@ -67,7 +59,7 @@ export const Map = ({
               lat={lat}
               lng={lng}
               pointCount={pointCount}
-              size={getClausterMakerSize(pointCount)}
+              size={CLAUSTER_MARKER_SIZE}
             />
           );
         }

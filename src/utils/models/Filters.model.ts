@@ -1,4 +1,4 @@
-export type Filters = {
+export type FiltersModel = {
   showOnlyAvailableVehicles: boolean;
   vehicleMinKmRange: number | null;
 };

@@ -1,8 +1,8 @@
-import { Vehicle } from "utils/models/vehicle.model";
+import { VehicleModel } from "utils/models/vehicle.model";
 import styles from "./VehicleDetailsPopup.module.css";
 
 type VehicleDetailsPopupProps = {
-  vehicle: Vehicle;
+  vehicle: VehicleModel;
   onClose: () => void | Promise<void>;
 };
 

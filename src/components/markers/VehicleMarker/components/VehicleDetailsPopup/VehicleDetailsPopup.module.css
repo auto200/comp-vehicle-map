@@ -10,6 +10,7 @@
   background-color: var(--clr-bg);
   text-align: center;
   font-size: 18px;
+  border: 1px solid var(--clr-primary);
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 50%;

@@ -1,8 +1,8 @@
-import { Vehicle } from "utils/models/vehicle.model";
+import { VehicleModel } from "utils/models/vehicle.model";
 import { fetcher } from "../fetcher";
 
 type VehiclesResponse = {
-  objects: Vehicle[];
+  objects: VehicleModel[];
 };
 
 export const getVehicles = async () => {

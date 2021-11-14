@@ -5,16 +5,16 @@ import React, { useEffect, useState } from "react";
 import { getVehicles } from "services/api";
 import { ErrorMessages } from "utils/enums/errorMessages";
 import { VehicleStatus } from "utils/enums/VehicleStatus";
-import { Filters as FiltersT } from "utils/models/Filters";
-import { Vehicle } from "utils/models/vehicle.model";
+import { FiltersModel as FiltersT } from "utils/models/Filters.model";
+import { VehicleModel } from "utils/models/vehicle.model";
 import styles from "./App.module.css";
 
 type State = "idle" | "loading" | "error";
 
 export const App = () => {
-  const [vehicles, setVehicles] = useState<Vehicle[]>([]);
+  const [vehicles, setVehicles] = useState<VehicleModel[]>([]);
   const [state, setState] = useState<State>("idle");
-  const [filtredVehicles, setFiltredVehicles] = useState<Vehicle[]>([]);
+  const [filtredVehicles, setFiltredVehicles] = useState<VehicleModel[]>([]);
   const [filters, setFilters] = useState<FiltersT>({
     showOnlyAvailableVehicles: false,
     vehicleMinKmRange: null,
@@ -59,7 +59,7 @@ export const App = () => {
   }, [vehicles, filters]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="app">
       {state === "loading" && <Loader />}
       {state === "error" && ErrorMessages.VEHICLES_FETCH_ERROR}
       {vehicles.length !== 0 && (

@@ -3,4 +3,6 @@ export const DEFAULT_MAP_CENTER = {
   lng: 20.981425596913773,
 };
 
-export const DEFAULT_MAP_ZOOM = 10;
+export const DEFAULT_MAP_ZOOM = 11;
+
+export const CLAUSTER_MARKER_SIZE = 30;

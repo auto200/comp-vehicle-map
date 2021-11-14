@@ -1,6 +1,6 @@
 import { VehicleStatus } from "utils/enums/VehicleStatus";
 
-export type Vehicle = {
+export type VehicleModel = {
   discriminator: string;
   platesNumber: string;
   sideNumber: string;

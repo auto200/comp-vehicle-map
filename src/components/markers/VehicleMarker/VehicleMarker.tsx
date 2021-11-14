@@ -1,16 +1,16 @@
 import clsx from "clsx";
-import { VehicleDetailsPopup } from "components/VehicleDetailsPopup";
 import { ChildComponentProps } from "google-map-react";
 import React from "react";
 import { VehicleStatus } from "utils/enums/VehicleStatus";
-import { Vehicle } from "utils/models/vehicle.model";
+import { VehicleModel } from "utils/models/vehicle.model";
 import { getCenterMarkerStyles } from "../shared";
+import { VehicleDetailsPopup } from "./components/VehicleDetailsPopup";
 import styles from "./VehicleMarker.module.css";
 
 type VegicleMarkerProps = {
-  vehicle: Vehicle;
+  vehicle: VehicleModel;
   size?: number;
-  onClick?: () => void | Promise<void>;
+  onClick: () => void | Promise<void>;
   onPopupClose: () => void | Promise<void>;
   active: boolean;
 } & ChildComponentProps;
@@ -32,7 +32,7 @@ export const VehicleMarker = ({
   );
 
   return (
-    <div style={{ position: "relative" }}>
+    <div>
       <button
         className={classNames}
         style={{

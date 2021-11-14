@@ -6,6 +6,8 @@
   height: 200px;
   background-color: var(--clr-bg);
   padding: 5px;
+  border-top: 1px solid var(--clr-primary);
+  border-right: 1px solid var(--clr-primary);
   border-top-right-radius: 5px;
 }
 
